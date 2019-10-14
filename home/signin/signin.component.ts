@@ -10,8 +10,9 @@ import { PlatformDetectorService } from 'src/app/core/auth/platform-detector/pla
 export class SignInComponent implements OnInit{
     
     loginForm: FormGroup;
-    @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
-    
+
+    @ViewChild('userNameInput', {static: false}) userNameInput: ElementRef<HTMLInputElement>;
+
     constructor(
         private formBuilder: FormBuilder,
         private authService: AuthService,
